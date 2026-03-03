@@ -21,6 +21,7 @@ lora:
 data:
   dataset_dir: "data/dataset"
   text_column: "text"
+  max_samples: 500_000  
 
 training:
   output_dir: "data/checkpoints"

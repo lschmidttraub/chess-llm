@@ -71,6 +71,8 @@ def main():
     dataset_dir = data_cfg["dataset_dir"]
     print(f"Loading dataset from: {dataset_dir}")
     dataset = load_from_disk(dataset_dir)
+    if data_cfg.get("max_samples"):
+        dataset = dataset.shuffle(seed=train_cfg["seed"]).select(range(min(data_cfg["max_samples"], len(dataset))))
     print(f"Dataset size: {len(dataset)} examples")
 
     # Configure trainer
