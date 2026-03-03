@@ -1,0 +1,10 @@
+.venv/
+.git/
+.claude/
+.flash/
+.env
+data/
+notebooks/
+uv.lock
+__pycache__/
+*.pyc

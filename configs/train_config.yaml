@@ -1,0 +1,46 @@
+model:
+  name: "unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit"
+  max_seq_length: 512
+  load_in_4bit: true
+
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0
+  bias: "none"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  use_gradient_checkpointing: "unsloth"
+
+data:
+  dataset_dir: "data/dataset"
+  text_column: "text"
+
+training:
+  output_dir: "data/checkpoints"
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2.0e-4
+  num_train_epochs: 1
+  warmup_steps: 5
+  max_steps: -1  # -1 means use num_train_epochs
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 3
+  seed: 42
+  optim: "adamw_8bit"
+  lr_scheduler_type: "linear"
+  fp16: false
+  bf16: false  # set to true if GPU supports it (A100, H100)
+  weight_decay: 0.01
+
+wandb:
+  enabled: false
+  project: "chess-llm"
+  run_name: null  # auto-generated if null

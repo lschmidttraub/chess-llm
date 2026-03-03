@@ -209,3 +209,5 @@ __marimo__/
 
 # Don't upload data
 data/
+.claude/
+.flash/
