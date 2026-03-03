@@ -95,7 +95,7 @@ def main():
         bf16=train_cfg["bf16"],
         weight_decay=train_cfg["weight_decay"],
         report_to=report_to,
-        max_seq_length=model_cfg["max_seq_length"],
+        max_length=model_cfg["max_seq_length"],
         dataset_text_field=data_cfg["text_column"],
         packing=False,
     )
