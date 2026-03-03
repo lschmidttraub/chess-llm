@@ -97,7 +97,7 @@ def main():
         report_to=report_to,
         max_length=model_cfg["max_seq_length"],
         dataset_text_field=data_cfg["text_column"],
-        packing=False,
+        packing=True,
     )
 
     trainer = SFTTrainer(

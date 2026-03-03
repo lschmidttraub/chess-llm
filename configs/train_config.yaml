@@ -1,6 +1,6 @@
 model:
   name: "unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit"
-  max_seq_length: 512
+  max_seq_length: 192
   load_in_4bit: true
 
 lora:
@@ -24,8 +24,8 @@ data:
 
 training:
   output_dir: "data/checkpoints"
-  per_device_train_batch_size: 2
-  gradient_accumulation_steps: 8
+  per_device_train_batch_size: 16
+  gradient_accumulation_steps: 1
   learning_rate: 2.0e-4
   num_train_epochs: 1
   warmup_steps: 5
@@ -37,7 +37,7 @@ training:
   optim: "adamw_8bit"
   lr_scheduler_type: "linear"
   fp16: false
-  bf16: false  # set to true if GPU supports it (A100, H100)
+  bf16: true
   weight_decay: 0.01
 
 wandb:
