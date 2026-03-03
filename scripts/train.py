@@ -4,13 +4,13 @@ Loads a preprocessed HuggingFace Dataset and trains with LoRA via SFTTrainer.
 Configuration is loaded from configs/train_config.yaml.
 """
 
+from unsloth import FastLanguageModel
 import argparse
 from pathlib import Path
 
 import yaml
 from datasets import load_from_disk
 from trl import SFTTrainer, SFTConfig
-from unsloth import FastLanguageModel
 
 
 def load_config(config_path: str) -> dict:

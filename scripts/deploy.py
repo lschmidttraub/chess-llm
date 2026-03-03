@@ -17,10 +17,10 @@ import runpod
 from dotenv import load_dotenv
 
 
-DEFAULT_GPU = "NVIDIA RTX A5000"
-DEFAULT_VOLUME_GB = 50
-DEFAULT_CONTAINER_DISK_GB = 20
-DOCKER_IMAGE = "unsloth/unsloth"
+DEFAULT_GPU = "NVIDIA RTX 3090"
+DEFAULT_VOLUME_GB = 100
+DEFAULT_CONTAINER_DISK_GB = 50
+DOCKER_IMAGE = "leosct/chess-llm:latest"
 POD_NAME = "chess-llm-training"
 
 
