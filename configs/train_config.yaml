@@ -41,7 +41,13 @@ training:
   bf16: true
   weight_decay: 0.01
 
+hub:
+  push_to_hub: true
+  repo_id: "lschmidttraub/chess-llm-deepseek-7b"  # your HF username/repo
+  merge_16bit: false  # true to merge LoRA into full model, false to push adapter only
+  private: true
+
 wandb:
-  enabled: false
+  enabled: True
   project: "chess-llm"
   run_name: null  # auto-generated if null

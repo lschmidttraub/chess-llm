@@ -8,7 +8,10 @@ from unsloth import FastLanguageModel
 import argparse
 from pathlib import Path
 
+from dotenv import load_dotenv
 import yaml
+
+load_dotenv()
 from datasets import load_from_disk
 from trl import SFTTrainer, SFTConfig
 
@@ -113,11 +116,13 @@ def main():
     print("Starting training...")
     trainer.train()
 
-    # Save
+    # Save locally
     print(f"Saving model to {output_dir}")
     model.save_pretrained(output_dir)
     tokenizer.save_pretrained(output_dir)
+
     print("Training complete!")
+    print(f"To upload, run: python scripts/upload.py --checkpoint {output_dir}")
 
 
 if __name__ == "__main__":

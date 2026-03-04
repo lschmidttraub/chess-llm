@@ -1,3 +1,4 @@
+# Not really necessary as we clone the repo, but keeping it just in case
 .venv/
 .git/
 .claude/
