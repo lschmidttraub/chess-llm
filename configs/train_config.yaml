@@ -43,7 +43,7 @@ training:
 
 hub:
   push_to_hub: true
-  repo_id: "lschmidttraub/chess-llm-deepseek-7b"  # your HF username/repo
+  repo_id: "leosct/chess-llm-deepseek-7b" 
   merge_16bit: false  # true to merge LoRA into full model, false to push adapter only
   private: true
 
